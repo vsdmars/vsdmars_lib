@@ -1,0 +1,11 @@
+# Template used by CMake's `configure_package_config_file()` to generate
+# `vsdmars_libConfig.cmake` when another project calls `find_package(vsdmars_lib)`.
+
+# Boilerplate helper macros injected by CMake (relocatable paths, component checks).
+@PACKAGE_INIT@
+
+# Import the `vsdmars::vsdmars_lib` target (include dirs + C++23 requirement).
+include("${CMAKE_CURRENT_LIST_DIR}/vsdmars_libTargets.cmake")
+
+# Verify any requested COMPONENTS (if any) are valid.
+check_required_components(vsdmars_lib)
